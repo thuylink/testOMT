@@ -3,65 +3,2250 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bản tin của Thùy Linh</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="header">
-            <div id="date">
-                <a href="" class="logo">
-                    <img src="assets/logo.png" alt="">
-                </a>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-                <div id="current-time"></div>
+    <header class="custom-header fixed-top mt-4" style="z-index: 1;">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-6">
 
-            </div>
+                            <!-- bars của ipadmini -->
+                            
+                            <i class="fa fa-bars" id="openPopup" style="margin-left: -500px; margin-top: 3px;"></i>
+
+                            <i class="fa fa-bars" id="openPopupMobile" style="margin-left: -500px; margin-top: 3px;"></i>
+
+                           
+                            <div id="myPopup" class="popup">
+                                <div class="popup-content">
+                                    <span id="closePopup" class="close">&times;</span>
+
+                                    <!-- <span id="openPopup" class="close">&times;</span> -->
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <div style="text-align: left;">
+                                                        <h6 class="head-popup">Thời sự</h6>
+                                                        <p class="small">Chính trị</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div style="text-align: left;">
+                                                        <h6 class="head-popup">Góc nhìn</h6>
+                                                        <p class="small">Bình luận nhiều</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-2">
+                                                    <div style="text-align: left;">
+                                                        <h6 class="head-popup">Thế giới</h6>
+                                                        <p class="small">Tư liệu</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-2">
+                                                    <div style="text-align: left;">
+                                                        <h6 class="head-popup">Video</h6>
+                                                        <p class="small">Thời sự</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-2">
+                                                    <div style="text-align: left;">
+                                                        <h6 class="head-popup">Podcasts</h6>
+                                                        <p class="small">VnExpress hôm nay</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-2">
+                                                    <div style="text-align: left;">
+                                                        <h6 class="head-popup">Kinh doanh</h6>
+                                                        <p class="small">Quốc tế</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-2 scrollable-col">
+                                            <div style="text-align: left;">
+                                                <h6>Spotlight</h6>
+                                                <h6>Podcasts</h6>
+                                                <h6>Ảnh</h6>
+                                                <h6>Infographics</h6>
+                                            </div>
+                                            <hr class=" thick-hr mt-1">
+
+                                            <div style="text-align: left;">
+                                                <h6>Mới nhất</h6>
+                                                <h6>Xem nhiều</h6>
+                                                <h6>Tin nóng</h6>
+                                            </div>
+                                            <hr class=" thick-hr mt-1">
+
+                                            <div class="thin" style="text-align: left; ">
+                                                <h6 class="thin">Rao vặt</h6>
+                                                <h6 class="thin">Startup</h6>
+                                                <h6 class="thin">Mua ảnh VnExpress</h6>
+                                            </div>
+                                            <hr class=" thick-hr mt-1">
+
+                                            <div class="thin" style="text-align: left; ">
+                                                <h6 class="thin">Liên hệ</h6>
+                                                <h6 class="thin">Tòa soạn </h6>
+                                                <h6 class="thin">Quảng cáo</h6>
+                                                <h6 class="thin">Hợp tác bản quyền</h6>
+
+                                            </div>
+                                            <hr class=" thick-hr mt-1">
 
 
-            <script src="script.js"></script>
-            <div id="menu">
-                <div class="item">
-                    <a href="">Mới nhất</a>
-                </div>
-                <div class="item">
-                    <a href="">Tin theo khu vực</a>
-                </div>
-                <div class="item">
-                    <img src="assets/logoE.png" alt="" class="logoe">
+                                            <div class="thin" style="text-align: left; ">
+                                                <h6 class="thin">Tải ứng dụng</h6>
+                                                <h6 class="thin">VnExpress </h6>
+                                                <h6 class="thin">International</h6>
 
-                    <a href="">International</a>
-                </div>
-                
-            </div>
-            <div id="actions">
-                
-                <div class="item">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="item">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="item">
-                    <h4 class="login">Đăng nhập</h4>
-                </div>
+                                            </div>
 
-                <div class="item">
-                    <i class="fas fa-bell"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- popup của ipadmini -->
+                            <script>
+                                // Sự kiện click vào icon để mở popup
+                                document.getElementById('openPopup').addEventListener('click', function () {
+                                    document.getElementById('myPopup').style.display = 'block';
+                                });
+                            
+                                // Sự kiện click vào nút đóng hoặc dấu x để đóng popup
+                                document.getElementById('closePopup').addEventListener('click', function () {
+                                    document.getElementById('myPopup').style.display = 'none';
+                                });
+                            
+                                // Đóng popup khi click bên ngoài nó
+                                window.addEventListener('click', function (event) {
+                                    const popup = document.getElementById('myPopup');
+                                    if (event.target === popup) {
+                                        popup.style.display = 'none';
+                                    }
+                                });
+                            </script>
+
+                            <!-- popup của ip12 pro -->
+                            <div id="myPopupMobile" class="popup">
+                                <div class="popup-content">
+                                    <span class="close" id="closePopupMobile">&times;</span>
+                                    <input class="form-control mr-sm-2 mt-5" type="search" placeholder="Search"
+                                        aria-label="Search">
+
+                                    <div>
+                                        <div class="icon-text">
+                                            <i class="fa mt-3 " id="loginIcon"
+                                                style="font-family: Arial, sans-serif; margin-left: 2%;">
+                                                <h5>Đăng nhập, Tạo tài khoản</h5>
+                                            </i>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="icon-text">
+                                            <i class="fa  mt-3 " id="loginIcon"
+                                                style="font-family: ilatic, sans-serif;">
+                                                <h5>
+                                                    Sắp xếp, Phân chia danh mục
+                                                </h5>
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12" style="text-align: left;">
+                                            <div class="dropdown">
+                                                <span class="dropdown-toggle" id="thoiSuDropdown" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    Thời sự
+                                                </span>
+                                                <div class="dropdown-menu" aria-labelledby="thoiSuDropdown">
+                                                    <li class="nav-item active">
+                                                        <a class="nav-link" href="#">Bất động sản</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Chính sách</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Thị trường</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Dự án</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Không gian sống</a>
+                                                    </li>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown mt-4">
+                                                <span class="dropdown-toggle" id="thoiSuDropdown" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    Không gian sống
+                                                </span>
+                                                <div class="dropdown-menu" aria-labelledby="thoiSuDropdown">
+                                                    <li class="nav-item active">
+                                                        <a class="nav-link" href="#">Bất động sản</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Chính sách</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Thị trường</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Dự án</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Không gian sống</a>
+                                                    </li>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown mt-4">
+                                                <span class="dropdown-toggle" id="thoiSuDropdown" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    Bất động sản
+                                                </span>
+                                                <div class="dropdown-menu" aria-labelledby="thoiSuDropdown">
+                                                    <li class="nav-item active">
+                                                        <a class="nav-link" href="#">Bất động sản</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Chính sách</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Thị trường</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Dự án</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Không gian sống</a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                // Sự kiện click vào icon để mở popup
+                                document.getElementById('openPopupMobile').addEventListener('click', function () {
+                                    document.getElementById('myPopupMobile').style.display = 'block';
+                                });
+
+                                // Sự kiện click vào nút đóng để đóng popup
+                                document.getElementById('closePopupMobile').addEventListener('click', function () {
+                                    document.getElementById('myPopupMobile').style.display = 'none';
+                                });
+
+                                // Đóng popup khi click bên ngoài nóf
+                                window.onclick = function (event) {
+                                    const popup = document.getElementById('myPopupMobile');
+                                    if (event.target === popup) {
+                                        popup.style.display = 'none';
+                                    }
+                                };
+                            </script>
+
+
+
+
+
+
+
+
+                            <script>
+                                // Sự kiện click vào icon để mở popup
+                                document.getElementById('openPopup').addEventListener('click', function () {
+                                    document.getElementById('myPopup').style.display = 'block';
+                                });
+
+                                // Sự kiện click vào nút đóng hoặc dấu x để đóng popup
+                                document.getElementById('closePopup').addEventListener('click', function () {
+                                    document.getElementById('myPopup').style.display = 'none';
+                                });
+
+                                // Đóng popup khi click bên ngoài nó
+                                window.addEventListener('click', function (event) {
+                                    const popup = document.getElementById('myPopup');
+                                    if (event.target === popup) {
+                                        popup.style.display = 'none';
+                                    }
+                                });
+                            </script>
+
+
+
+
+                        </div>
+                        <div class="col-6">
+                            <img src="https://s1.vnecdn.net/vnexpress/restruct/i/v897/v2_2019/pc/graphics/logo.svg"
+                                alt="" class="img-fluid" style="
+                                    max-width: 341%;
+                                    height: auto;
+                                    margin-left: -488px;
+                                ">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-3">
+                            Mới nhất
+                        </div>
+                        <div class="col-3">
+                            International
+                        </div>
+                        <div class="col-6">
+                            <div class="row navItems">
+                                <div class="col-3">
+                                    <i class="fa fa-search"></i>
+
+                                </div>
+                                <!-- icon user cho màn khác màn iphone -->
+                                <!-- <div class="col-2" id="loginIcon">
+                                    <i class="fa fa-user"></i>
+                                </div> -->
+
+                                <!-- icon user cho ip -->
+                                <div class="col-2" id="loginIconIphone">
+                                    <i class="fa fa-user"></i>
+                                </div>
+
+                                <div class="col-4" id="loginText">
+                                    Đăng nhập
+                                </div>
+
+                                <div id="loginPopup" class="popup">
+                                    <div class="popup-content-login">
+                                        <span class="close">&times;</span>
+                                        <!-- Nội dung của popup -->
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h5 class="login-toggle" data-form="loginForm">Đăng nhập</h5>
+                                            </div>
+                                            <div class="col-6">
+                                                <h5 class="login-toggle" data-form="registerForm">Tạo tài khoản</h5>
+                                            </div>
+                                        </div>
+                                        <hr class="thick-hr">
+
+                                        <div id="loginForm" class="login-form mt-3">
+                                            <form action="#" method="POST">
+
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p>Đăng nhập với email</p>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="username"
+                                                                name="username" placeholder="Nhập email">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control" id="password"
+                                                                name="password" placeholder="Nhập mật khẩu">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary btn-block">Đăng
+                                                            nhập</button>
+                                                        <button type="button" class="btn btn-block">Lấy lại mật
+                                                            khẩu</button>
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <p>Đăng nhập với</p>
+                                                        <div class="social-login mt-3">
+                                                            <button class="btn btn-google"
+                                                                style="border-color: red;width: 100%;">Google</button>
+                                                        </div>
+                                                        <!-- Nút đăng nhập với Facebook -->
+                                                        <div class="social-login mt-3">
+                                                            <button class="btn btn-block "
+                                                                style="border-color: rgb(31, 153, 183);">
+                                                                Facebook</button>
+                                                        </div>
+                                                        <!-- Nút đăng nhập với Apple -->
+                                                        <div class="social-login mt-3">
+                                                            <button class="btn  btn-block"
+                                                                style="border-color: rgb(72, 62, 62);">Apple</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </form>
+                                        </div>
+
+                                        <div id="registerForm" class="login-form mt-3" style="display: none;">
+                                            <!-- Form đăng ký -->
+                                            <form action="#" method="POST">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p>Tạo tài khoản VnExpress</p>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="username"
+                                                                name="username" placeholder="Nhập email">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control" id="password"
+                                                                name="password" placeholder="Nhập mật khẩu">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary btn-block">Tạo tài
+                                                            khoản</button>
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <p>Tạo tài khoản với</p>
+                                                        <div class="social-login mt-3">
+                                                            <button class="btn btn-google"
+                                                                style="border-color: red;width: 100%;">Google</button>
+                                                        </div>
+                                                        <!-- Nút đăng nhập với Facebook -->
+                                                        <div class="social-login mt-3">
+                                                            <button class="btn btn-block "
+                                                                style="border-color: rgb(31, 153, 183);">
+                                                                Facebook</button>
+                                                        </div>
+                                                        <!-- Nút đăng nhập với Apple -->
+                                                        <div class="social-login mt-3">
+                                                            <button class="btn  btn-block"
+                                                                style="border-color: rgb(72, 62, 62);">Apple</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    // Function to show the popup
+                                    function showPopup() {
+                                        document.getElementById('loginPopup').style.display = 'block';
+                                    }
+                                
+                                    // Function to hide the popup
+                                    function hidePopup() {
+                                        document.getElementById('loginPopup').style.display = 'none';
+                                    }
+                                
+                                    // Add event listeners for both icons
+                                    document.getElementById('loginIcon').addEventListener('click', showPopup);
+                                    document.getElementById('loginIconIphone').addEventListener('click', showPopup);
+                                
+                                    // Add event listener for the close button
+                                    document.querySelector('.popup .close').addEventListener('click', hidePopup);
+                                
+                                    // Add event listener to close the popup when clicking outside of it
+                                    window.addEventListener('click', function(event) {
+                                        const popup = document.getElementById('loginPopup');
+                                        if (event.target === popup) {
+                                            hidePopup();
+                                        }
+                                    });
+                                </script>
+
+
+                                <div class="col-3">
+                                    <i class="fa fa-bell"></i>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="banner">
-            <div class="box-left">
+    </header>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var loginPopup = document.getElementById('loginPopup');
+            var closeBtn = loginPopup.querySelector('.close');
+            var loginToggle = loginPopup.querySelectorAll('.login-toggle');
+            var loginForm = document.getElementById('loginForm');
+            var registerForm = document.getElementById('registerForm');
+
+            // Bắt sự kiện click vào nút đóng popup
+            closeBtn.addEventListener('click', function () {
+                togglePopup();
+            });
+
+            // Bắt sự kiện click vào dấu nhân (&times;)
+            var closeIcon = loginPopup.querySelector('.close');
+            closeIcon.addEventListener('click', function () {
+                togglePopup();
+            });
+
+            // Bắt sự kiện click vào các nút "Đăng nhập" hoặc "Tạo tài khoản"
+            loginToggle.forEach(function (toggle) {
+                toggle.addEventListener('click', function () {
+                    var formToShow = this.getAttribute('data-form');
+                    showForm(formToShow);
+
+                    // Đặt màu cho các nút "Đăng nhập" và "Đăng ký" dựa trên form hiện tại
+                    if (formToShow === 'loginForm') {
+                        loginToggle.forEach(function (toggle) {
+                            toggle.style.color = toggle.getAttribute('data-form') === 'loginForm' ? 'red' : ''; // In đậm chữ "Đăng nhập"
+                        });
+                    } else {
+                        loginToggle.forEach(function (toggle) {
+                            toggle.style.color = toggle.getAttribute('data-form') === 'registerForm' ? 'red' : ''; // In đậm chữ "Đăng ký"
+                        });
+                    }
+                });
+            });
+
+            // Hàm hiển thị popup
+            function togglePopup() {
+                if (loginPopup.style.display === 'flex') {
+                    loginPopup.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Hiển thị cuộn trang
+                } else {
+                    loginPopup.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Ẩn cuộn trang
+                }
+            }
+
+            // Hàm hiển thị form tương ứng
+            function showForm(formToShow) {
+                var forms = loginPopup.querySelectorAll('.login-form');
+                forms.forEach(function (form) {
+                    if (form.id === formToShow) {
+                        form.style.display = 'block';
+                    } else {
+                        form.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var loginIcon = document.getElementById('loginIcon');
+            var loginText = document.getElementById('loginText');
+            var popup = document.getElementById('loginPopup');
+
+            // Bắt sự kiện click vào biểu tượng đăng nhập hoặc văn bản "Đăng nhập"
+            loginIcon.addEventListener('click', togglePopup);
+            loginText.addEventListener('click', togglePopup);
+
+            // Bắt sự kiện click vào nút đóng popup
+            document.querySelector('#loginPopup .close').addEventListener('click', togglePopup);
+
+            // Hàm hiển thị/ẩn popup
+            function togglePopup() {
+                if (popup.style.display === 'flex') {
+                    popup.style.display = 'none'; // Ẩn popup
+                    document.body.style.overflow = 'auto'; // Hiển thị cuộn trang
+                } else {
+                    popup.style.display = 'flex'; // Hiển thị popup
+                    document.body.style.overflow = 'hidden'; // Ẩn cuộn trang
+                }
+            }
+        });
+
+    </script>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="customNavbar ">
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" aria-expanded="false">
+                            Thời sự
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Chính trị</a></li>
+                            <li><a class="dropdown-item">Dân sinh</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="  nav-link " id="navbarDropdown" aria-expanded="false">
+                            Góc nhìn
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Bình luận nhiều</a></li>
+                            <li><a class="dropdown-item">Chính trị và chính sách</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Thế giới
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Tư liệu</a></li>
+                            <li><a class="dropdown-item">Phân tích</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Video
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Thời sự</a></li>
+                            <li><a class="dropdown-item">Nhịp sống </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" id="navbarDropdown" aria-expanded="false">
+                            Podcasts
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">VnExpress hôm nay</a></li>
+                            <li><a class="dropdown-item">Tâm điểm kinh tế </a></li>
+                            <li><a class="dropdown-item">Tài chính cá nhân</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Kinh doanh
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Quốc tế</a></li>
+                            <li><a class="dropdown-item">Doanh nghiệp </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Bất động sản
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Chính sách</a></li>
+                            <li><a class="dropdown-item">Thị trường</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Khoa học
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Khoa học trong nước</a></li>
+                            <li><a class="dropdown-item">Doanh nghiệp </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class=" custom-link nav-link" id="navbarDropdown" aria-expanded="false">
+                            Giải trí
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Giới sao</a></li>
+                            <li><a class="dropdown-item">Sách</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Thể thao
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Euro2024</a></li>
+                            <li><a class="dropdown-item">Bóng đá</a></li>
+                            <li><a class="dropdown-item">Lịch thi đấu</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Pháp luật
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Hồ sơ phá án</a></li>
+                            <li><a class="dropdown-item">Tư vấn</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Giáo dục
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Tin tức</a></li>
+                            <li><a class="dropdown-item">Tuyển sinh</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Sức khỏe
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Tin tức</a></li>
+                            <li><a class="dropdown-item">Tư vấn</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Đời sống
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Nhịp sống</a></li>
+                            <li><a class="dropdown-item">Tổ ấm</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Du lịch
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Điểm đến</a></li>
+                            <li><a class="dropdown-item">Ẩm thực</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Số hóa
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Công nghệ</a></li>
+                            <li><a class="dropdown-item">Sản phẩm</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " id="navbarDropdown" aria-expanded="false">
+                            Xe
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item">Thị trường</a></li>
+                            <li><a class="dropdown-item">Car Awards 2023</a></li>
+                        </ul>
+                    </li>
+
+                    <ul>
+                        <li class="nav-item dropdown">
+
+                            <i class="fa fa-bars" id="openPopupIcon"></i> 
+                        </li>
+
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="myPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <div class="row">
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-2">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Thời sự</h6>
+                                <p class="small">Chính trị</p>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Góc nhìn</h6>
+                                <p class="small">Bình luận nhiều</p>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Thế giới</h6>
+                                <p class="small">Tư liệu</p>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Video</h6>
+                                <p class="small">Thời sự</p>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Podcasts</h6>
+                                <p class="small">VnExpress hôm nay</p>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Kinh doanh</h6>
+                                <p class="small">Quốc tế</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-2 scrollable-col">
+                    <div style="text-align: left;">
+                        <h6>Spotlight</h6>
+                        <h6>Podcasts</h6>
+                        <h6>Ảnh</h6>
+                        <h6>Infographics</h6>
+                    </div>
+                    <hr class=" thick-hr mt-1">
+
+                    <div style="text-align: left;">
+                        <h6>Mới nhất</h6>
+                        <h6>Xem nhiều</h6>
+                        <h6>Tin nóng</h6>
+                    </div>
+                    <hr class=" thick-hr mt-1">
+
+                    <div class="thin" style="text-align: left; ">
+                        <h6 class="thin">Rao vặt</h6>
+                        <h6 class="thin">Startup</h6>
+                        <h6 class="thin">Mua ảnh VnExpress</h6>
+                    </div>
+                    <hr class=" thick-hr mt-1">
+
+                    <div class="thin" style="text-align: left; ">
+                        <h6 class="thin">Liên hệ</h6>
+                        <h6 class="thin">Tòa soạn </h6>
+                        <h6 class="thin">Quảng cáo</h6>
+                        <h6 class="thin">Hợp tác bản quyền</h6>
+
+                    </div>
+                    <hr class=" thick-hr mt-1">
+
+
+                    <div class="thin" style="text-align: left; ">
+                        <h6 class="thin">Tải ứng dụng</h6>
+                        <h6 class="thin">VnExpress </h6>
+                        <h6 class="thin">International</h6>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sự kiện click vào icon bars để mở popup
+        document.getElementById('openPopupIcon').addEventListener('click', function () {
+            document.getElementById('myPopup').style.display = 'block';
+        });
+    
+        // Sự kiện click vào nút đóng hoặc dấu x để đóng popup
+        document.getElementById('closePopup').addEventListener('click', function () {
+            document.getElementById('myPopup').style.display = 'none';
+        });
+    
+        // Đóng popup khi click bên ngoài nó
+        window.addEventListener('click', function (event) {
+            const popup = document.getElementById('myPopup');
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+        </script>
+
+
+
+
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var header = document.querySelector(".custom-header");
+            var navbar = document.querySelector(".navbar");
+
+            window.addEventListener("scroll", function () {
+                var currentScrollPos = window.pageYOffset;
+
+                if (currentScrollPos > 0) {
+                    // Cuộn xuống
+                    header.classList.add("hide-header");
+                    navbar.classList.add("fixed-top");
+                } else {
+                    // Trở lại đầu trang
+                    header.classList.remove("hide-header");
+                    navbar.classList.remove("fixed-top");
+                }
+            });
+        });
+
+    </script>
+
+
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-7">
+                <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/29705b0524a784f9ddb6-171764056-4376-5336-1717640589.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=GYWzxoBIyVMflRRkmcuQzw"
+                    alt="" width="100%">
+            </div>
+
+            <div class=".col-sm-12 col-lg-5">
+                <h4 class="hover-title">Có nên mua vàng lúc này khi giá giảm liên tục?</h4>
+                <h6 class="mt-4">
+                    Các chuyên gia cho rằng giá vàng SJC có thể còn dư địa giảm tiếp, người dân nên chọn thời điểm giao
+                    dịch hợp lý, tránh tâm lý FOMO (sợ bỏ lỡ cơ hội).
+                </h6>
+                <p class="mt-5">Với biện pháp bình ổn từ Ngân hàng Nhà nước, giá vàng giảm liên tục 9</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            3h trước
+                        </div>
+                        <div class="col-3">
+                            Thế giới
+                        </div>
+                        <div class="col-3">
+                            <i class="fas fa-comment " style="color: rgb(120, 120, 113);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr class=" thick-hr mt-4">
+
+        <div class="row mt-4">
+            <div class="col-sm-12 col-lg-4 mt-5">
+                <h6 class="title">Giá xăng về dưới 22.000 đồng một lít
+                    <i class="fas fa-comment " style="color: rgb(120, 120, 113);"></i>
+                </h6>
+                <img src="https://i1-kinhdoanh.vnecdn.net/2024/06/06/xang61-1717656688-1717656711-7168-1717659972.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=VS_dGDT97HLJen2_TrW7Fw"
+                    width="100%">
+            </div>
+            <div class="col-sm-12 col-lg-4 mt-5">
+                <h6 class="title">Bà Trương Mỹ Lan bị cáo buộc vận chuyển trái phép 4,5 tỷ USD qua biên giới 14 <i
+                        class="fas fa-comment " style="color: rgb(120, 120, 113);"></i></h6>
+                <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/z5224777321059-7b9188a52f0f089-6617-3705-1717651435.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=UPek9xrGMmlF9z2NC3WA7g"
+                    width="100%">
+            </div>
+            <div class="col-sm-12 col-lg-4 mt-5">
+                <h6 class="view">Góc nhìn</h6>
+                <h6>Làm việc cầm chừng</h6>
+                <p>'Cống hiến vừa phải, làm việc cầm chắc chắn không phải là lựa chọn khôn ngoan nơi công sở.</p>
+
+                <div class="namecus row mt-5">
+                    <div class="col-8">
+                        Trần Hùng Thiện
+                        <i class="fas fa-comment " style="color: rgb(120, 120, 113);"></i>
+                    </div>
+
+                    <div class="col-4">
+                        <img src="https://i1-vnexpress.vnecdn.net/2023/05/20/anhthienpngpng-1684578146.png?w=100&h=100&q=100&dpr=1&fit=crop&s=fb1E_PG73ZHL7Goln2Ta3g"
+                            style="    width: 131%;
+                        height: 112%;
+                        border-radius: 91px;
+                        margin-top: -31px;
+                        margin-left: -92px;">
+                    </div>
+                </div>
 
             </div>
+        </div>
+        <hr class="thick-hr mt-4">
+
+        <div class="row mt-3">
+            <div class="col-md-12 col-lg-4 vertical-separator">
+                <div class="mt-4">
+                    <h6 class="hover-title">Ông Putin: Phương Tây sai lầm khi nghĩ Nga sẽ không dùng vũ khí hạt nhân
+                    </h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/2024-06-05t185304z-167292766-r-3452-4652-1717630442.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=GJzr_XUlqPHRgqep9QP-3w"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Ông Putin nói phương Tây sai lầm khi nghĩ Nga không bao giờ dùng vũ khí hạt nhân ở
+                                Ukraine <i class="fas fa-comment " style="color: rgb(120, 120, 113);"></i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class=" thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Bà Trương Mỹ Lan bị cáo buộc vận chuyển trái phép 4,5 tỷ USD qua biên giới
+                        11</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/z5224777321059-7b9188a52f0f089-6617-3705-1717651435.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=UPek9xrGMmlF9z2NC3WA7g"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Phó thủ tướng: Đẩy nhanh phê duyệt 2,5 tỷ USD phát triển Đồng bằng sông Cửu Long
+                                <i class="fas fa-comment " style="color: rgb(120, 120, 113);"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Cựu cảnh sát hình sự: Tôi nhận tiền không phải để bảo kê sòng Poker</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/tienquan-1717655834-1717655868-7710-1717655874.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=_UGXuzxrX1pszLSRODraEA"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>KHÁNH HÒATại tòa, Lường Tiến Quân, cựu phó phòng 4 Cục Cảnh sát Hình sự, khai 7 lần nhận
+                                tiền. <i class="fas fa-comment " style="color: rgb(120, 120, 113);"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class=" thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Vụ xử ông Trump lật kèo bầu cử bị đình chỉ vô thời hạn</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/AFP2024053034U92AFv3HighResTop-6989-4668-1717640229.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=dPjfVoNB7W81oWYGOkVWsQ"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Tòa phúc thẩm Georgia đình chỉ vô thời hạn vụ xử ông Trump <i class="fas fa-comment "
+                                    style="color: rgb(120, 120, 113);"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Ông Putin: Phương Tây sai lầm khi nghĩ Nga sẽ không dùng vũ khí hạt nhân 39
+                    </h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/29705b0524a784f9ddb6-171764056-4376-5336-1717640589.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=GYWzxoBIyVMflRRkmcuQzw"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Ông Putin: Phương Tây sai lầm khi nghĩ Nga sẽ không dùng vũ khí hạt nhân 39 <i
+                                    class="fas fa-comment " style="color: rgb(120, 120, 113);"></i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Bộ trưởng Tư pháp Lê Thành Long làm Phó thủ tướng</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/5b81d0c2e46b44351d7a-171766328-3243-9734-1717664889.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=r-pqpfbZOHP8jcoNYIGAuw"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Bộ trưởng Tư pháp Lê Thành Long được Quốc hội phê chuẩn bổ nhiệm.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Ông Biden: Mỹ không cho phép Ukraine tập kích vào Moskva
+                    </h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/afp-20240606-34vn7wd-v2-highre-6412-7751-1717687863.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=r3PYtVRmnVxQmWzuR9utpQ"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Tổng thống Biden nhấn mạnh không cho phép Ukraine dùng vũ khí Mỹ.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Indonesia thua Iraq, tiếp thêm hy vọng cho Việt Nam
+                    </h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-thethao.vnecdn.net/2024/06/06/indonesia-iraq-vong-loai-hai-w-4293-8526-1717671747.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=9BvVgeFCWHzuPFckU9zr6A"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Việt Nam có hy vọng rút ngắn khoảng cách ở bảng F.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Bà Nguyễn Thị Thanh được bầu làm Phó chủ tịch Quốc hội</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/dsc-8527-copy-1717661827-17176-2255-6157-1717664876.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=G_hdh4pi3KcJr0bNKfH7Xg"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Đại biểu Nguyễn Thị Thanh được Quốc hội bầu giữ chức Phó chủ tịch Quốc hội khóa 15
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Thái Lan mất quyền tự quyết khi hoà Trung Quốc</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-thethao.vnecdn.net/2024/06/06/thai-lan-trung-quoc-vong-loai-5157-7951-1717683796.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=fSd3dVeLypAhHOXwDc9cyA"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Trận hoà 1-1 trước Trung Quốc ở lượt năm bảng C vòng loại hai World Cup 2026.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Ca sĩ Chu Bin bị tạm giữ vì liên quan ma túy</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/chubin-6618-1717675797.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=CUAVuYX5b_1PGu88kn7dgQ"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Ca sĩ Chu Bin, cùng nhiều người bị Công an quận 10 tạm giữ vì liên quan tổ chức, hoặc sử
+                                dụng ma túy
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Ôtô khách tông loạt xe máy, hai người chết</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/z5513559393800-bfc34d383f5774a-6388-3782-1717670921.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=kSO0s3nk-9JT3yGR71R9fg"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Ôtô chở công nhân chạy trên quốc lộ 1 húc nhiều xe máy đang chờ đèn đỏ làm hai người tử
+                                vong
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Lãng Khê: 'Không ai quan tâm tôi là con gái Trần Anh Hùng'</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-giaitri.vnecdn.net/2024/06/05/snapinsta-app-349459969-928519-3362-6067-1717557440.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=Z0Ls9SZjqZZUqgyIQuEfLA"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Diễn viên Lãng Khê nói mỗi lần thử vai, êkíp không quan tâm cô là con của đạo diễn Trần
+                                Anh Hùng
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Giám đốc đầu tư VinaCapital đột ngột qua đời</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-kinhdoanh.vnecdn.net/2024/06/06/andy-ho-1717666761-1562-1717666789.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=Pc1iZc5E08muN42Npi-XBQ"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Sáng nay, tại nhà riêng ở TP HCM, ông Andy Ho, Giám đốc đầu tư VinaCapital, đột ngột qua
+                                đời ở tuổi 52
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thick-hr mt-0">
+
+
+                <div class="mt-2">
+                    <h6 class="hover-title">Cán bộ cố tình đùn đẩy, né tránh trách nhiệm sẽ bị tạm đình chỉ công tác
+                    </h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/LuongCuong-1717660777-5812-1717660849.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=2A_jb_2Eisl8qEZJ3b4tJQ"
+                                width="100%">
+                        </div>
+                        <div class="col-7">
+                            <p>Bộ Chính trị yêu cầu tạm đình chỉ công tác với cán bộ có hành vi nhũng nhiễu, tiêu cực
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-8">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarNav-">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Kinh doanh </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Quốc tế</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Doanh Nghiệp</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Chứng khoán </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Vĩ mô</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Hậu trường kinh doanh</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="col-4 mt-4">
+                        <img src="https://i1-kinhdoanh.vnecdn.net/2024/06/06/sr-jpeg-1318-1717634582-171764-4297-7693-1717643193.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=KlXg65oqQqxFpXPkEE6bDg"
+                            width="100%">
+                    </div>
+                    <div class="col-4 mt-4 vertical-separator">
+                        <h6 class="hover-title">
+                            Trung Quốc giảm nhập sầu riêng Thái, tăng mua hàng Việt
+                        </h6>
+                        <p>4 tháng đầu năm, Trung Quốc tăng mua hơn 91% sầu riêng từ Việt Nam, trong khi giảm tới 55%
+                            hàng từ Thái Lan</p>
+                    </div>
+
+                    <div class="col-4 mt-4">
+                        <h6 class="hover-title">
+                            Giá vàng thế giới tiếp tục tăng
+                        </h6>
+                        <p>Số liệu việc làm không mạnh như kỳ vọng làm tăng khả năng Mỹ giảm lãi suất, từ đó kéo giá
+                            vàng và Wall Street lên cao.</p>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+                <div class="row mt-3">
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Công ty nông nghiệp của ông Trần Bá Dương bắt đầu có lãi
+
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Lương thực tế của người Nhật giảm 25 tháng liên tiếp
+
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Thanh long Việt đổ sang Mỹ, Anh, Đức
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="row mt-3 ">
+                    <div class="col-5">
+                        <div class="container">
+                            <div class="row ">
+                                <div class="col-md-6 table-cell">
+                                    Giá vàng
+                                </div>
+                                <div class="col-md-3 table-cell">
+                                    Mua
+                                </div>
+                                <div class="col-md-3 table-cell">
+                                    Bán
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 table-cell">
+                                    Thế giới
+                                </div>
+                                <div class="col-md-3 table-cell">
+                                    2.362,3
+                                </div>
+                                <div class="col-md-3 table-cell">
+                                    2.363,3
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 table-cell">
+                                    Vàng SJC
+
+                                </div>
+                                <div class="col-md-3 table-cell">
+                                    74,98
+                                </div>
+                                <div class="col-md-3 table-cell">
+                                    76,98
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-7 ">
+                        <div class="row">
+                            <div class="col-4 table-cell">
+                                Lãi suất
+                            </div>
+                            <div class="col-1 table-cell">
+                                1
+                            </div>
+                            <div class="col-1 table-cell">
+                                3
+                            </div>
+                            <div class="col-1 table-cell">
+                                6
+                            </div>
+                            <div class="col-1 table-cell">
+                                9
+                            </div>
+                            <div class="col-1 table-cell">
+                                12
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 table-cell">
+                                Online
+                            </div>
+                            <div class="col-1 table-cell">
+                                3,5
+                            </div>
+                            <div class="col-1 table-cell">
+                                3,6
+                            </div>
+                            <div class="col-1 table-cell">
+                                5,15
+                            </div>
+                            <div class="col-1 table-cell">
+                                5,1
+                            </div>
+                            <div class="col-1 table-cell">
+                                5,5
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 table-cell">
+                                Tại quầy
+                            </div>
+                            <div class="col-1 table-cell">
+                                3,3
+                            </div>
+                            <div class="col-1 table-cell">
+                                3,5
+                            </div>
+                            <div class="col-1 table-cell">
+                                5
+                            </div>
+                            <div class="col-1 table-cell ">
+                                4,95
+                            </div>
+                            <div class="col-1 table-cell">
+                                5,4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row mt-4">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Bất động sản </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Chính sách</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Thị trường</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Dự án </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Không gian sống</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tư vấn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="col-4 mt-4">
+                        <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/batdongsan-1717651189-17176512-3433-3304-1717651246.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=6UMAOUjpXMHHlrmEXFdDjQ"
+                            width="100%">
+                    </div>
+                    <div class="col-4 mt-4 vertical-separator">
+                        <h6 id="hover-blue">
+                            M&A bất động sản được dự báo sôi động nửa cuối năm
+                        </h6>
+                        <p>Mua bán sáp nhập (M&A) bất động sản sẽ sôi động nửa cuối năm khi doanh nghiệp địa ốc cần
+                            nguồn lực tái cấu ... </p>
+                    </div>
+
+                    <div class="col-4 mt-3">
+                        <h6 id="hover-blue">
+                            Có nên dồn hết tiền vào bất động sản cho thuê?
+                        </h6>
+                        <p>Chuyên gia cho rằng việc chỉ sở hữu bất động sản sẽ gây trở ngại khi cần tiền gấp, dễ bỏ lỡ
+                            các cơ hội ..</p>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-4">
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Gợi ý thiết kế gầm cầu thang rộng 7-8 m2 trong nhà ống
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            CEO Bất động sản An Gia từ nhiệm sau 5 tháng
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Chuyển hàng nghìn căn hộ tái định cư bỏ hoang sang nhà xã hội có khả thi?
+                        </h6>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+                <div class="row mt-4">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Thể thao </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Euro2024</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Bóng đá</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Tennis</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Marathon</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Lịch thi đấu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">V-League</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">VnExpress Marathon 2024</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="col-4 mt-4">
+                        <img src="https://i1-thethao.vnecdn.net/2024/06/06/screenshot-2024-06-06-at-22-54-8570-4138-1717689440.png?w=380&h=228&q=100&dpr=1&fit=crop&s=yofB2bsJGKNFEg9ESPkBTQ"
+                            width="100%">
+                    </div>
+                    <div class="col-4 mt-4 vertical-separator">
+                        <h6 id="hover-blue">
+                            Grealish, Maguire không được dự Euro 2024
+                        </h6>
+                        <p>HLV tuyển Anh Gareth Southgate loại tiền vệ Jack Grealish và trung vệ Harry Maguire khỏi danh
+                            sách tham dự Euro 2024. </p>
+                    </div>
+
+                    <div class="col-4 mt-4">
+                        <h6 id="hover-blue">
+                            Ngoại hạng Anh tiếp tục sử dụng VAR ở mùa tới
+                        </h6>
+                        <p>19 CLB Ngoại hạng Anh bỏ phiếu ủng hộ tiếp tục sử dụng VAR ở mùa giải tới, chỉ Wolves phản
+                            đối. </p>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <h6 class="dot-before">
+                            Djokovic phẫu thuật
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Alcaraz thành công ở Roland Garros nhờ học Djokovic
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            VnExpress tổ chức cuộc thi Ảnh đẹp Runner hè 2024
+                        </h6>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+
+                <div class="row mt-4">
+                    <div class="col-8">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Giải trí</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Giới sao</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Phim</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="#">Nhạc</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Thời trang</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="row">
+                            <div class="col-6 mt-4">
+                                <img src="https://i1-giaitri.vnecdn.net/2024/06/05/snapinsta-app-349459969-928519-3362-6067-1717557440.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=B8eJ4ndIWcotz57vtuyvkQ"
+                                    width="100%">
+                            </div>
+                            <div class="col-6 mt-4">
+                                <h6 id="hover-blue">
+                                    Lãng Khê: 'Không ai quan tâm tôi là con gái Trần Anh Hùng'
+                                </h6>
+                                <p>Diễn viên Lãng Khê nói mỗi lần thử vai, êkíp không quan tâm cô là con của đạo ...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 mt-4" style="background-color: #e9ecef;">
+                        <h6 class="mt-1">Sách</h6>
+                        <h6 id="hover-blue">
+                            Bản thảo chép tay của Albert Camus giá hơn 650.000 euro
+                        </h6>
+                        <p>Nhà văn Pháp đoạt giải Nobel - Albert Camus - được cho đã chép tay tiểu thuyết "Người xa lạ"
+                            của ông ... </p>
+                    </div>
+
+                </div>
+                <hr class="thick-hr mt-3">
+
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Ảnh cưới phong cách hoài cổ của Huỳnh Anh
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Carlo Ancelotti - quý ông ngoài đường pitch
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Tài tử 'Tân Bến Thượng Hải' kỷ niệm 10 năm cưới
+                        </h6>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-2">
+
+                <div class="row mt-4">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link bot" href="#">Đời sống </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Bài học sống</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tổ ấm</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Tiêu dùng</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Cooking</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Mua sắm thông minh</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="col-4 mt-4">
+                        <img src="https://i1-suckhoe.vnecdn.net/2024/06/06/img-7622-1717682917-9848-1717682998.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=7DPu2KWTPtp5wXyaP5Y_5w"
+                            width="100%">
+                    </div>
+                    <div class="col-4 mt-4 vertical-separator">
+                        <h6 id="hover-blue">
+                            Vì sao nên bắt đầu ngày mới bằng quy tắc '30-30-30'?
+                            </hPhương pháp 30-30-30 đang là xu hướng sức khỏe, tức tiêu thụ 30 g protein sau khi thức
+                                giấc không quá 30 phút ... </p>
+                    </div>
+
+                    <div class="col-4 mt-4">
+                        <h6 id="hover-blue">
+                            Cai rượu 10 lần vẫn thất bại </h6>
+                        <p>Sau mỗi lần nhập viện do rượu, ông Hùng hứa với gia đình và bác sĩ sẽ cai, song đều thất bại
+                            và liên tục phải cấp cứu do ... </p>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Chóng mặt
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Lupus - căn bệnh khiến nữ ca sĩ Halsey nhập viện
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Đau dạ dày - bệnh do stress, ăn uống vô độ
+                        </h6>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+
+
+                <div class="row mt-4">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link bot" href="#">Sức khỏe</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tin tức </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Dinh dưỡng</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Khỏe đẹp</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Các bệnh</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Vaccine</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="col-4 mt-4">
+                        <img src="https://i1-suckhoe.vnecdn.net/2024/06/07/vecteezy-male-depression-sad-y-4710-8250-1717726772.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=XXRphT9EwzJTbcSfbLqQ5Q"
+                            width="100%">
+                    </div>
+                    <div class="col-4 mt-4 vertical-separator">
+                        <h6 id="hover-blue">
+                            Bốn hiểu lầm về bệnh viêm gan A
+                        </h6 id="hover-blue">
+                        <p>VKhông nguy hiểm, khả năng lây nhiễm thấp, không cần tiêm vaccine là những hiểu lầm về viêm
+                            gan A</p>
+                    </div>
+
+                    <div class="col-4 mt-4">
+                        <h6 id="hover-blue">
+                            Vì sao nên bắt đầu ngày mới bằng quy tắc '30-30-30'? </h6>
+                        <p>Thí sinh thi lớp 10 không được mang vào phòng thi giấy than, bút xóa, các thiết bị truyền
+                            tin... </p>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Tưởng bệnh xương khớp hóa tắc động mạch
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Thiếu vitamin gì dễ mất ngủ?
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Cai rượu 10 lần vẫn thất bại </h6>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+
+                <div class="row mt-4">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link bot" href="#">Giáo dục</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tin tức </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tuyển sinh</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Chân dung</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Du học</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Giáo dục 4.0</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Trắc nghiệm</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="col-4 mt-4">
+                        <img src="https://i1-vnexpress.vnecdn.net/2024/06/05/hoc-sinh-1717563983-5967-1717597586.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=giey_ucCUO4xSwgk6VEkoA"
+                            width="100%">
+                    </div>
+                    <div class="col-4 mt-4 vertical-separator">
+                        <h6 id="hover-blue">
+                            Nữ sinh đỗ học bổng Australia với điểm gần tuyệt đối
+                        </h6>
+                        <p>Với điểm học bạ 9,8 và SAT 1580/1600, Đỗ Chúc An nhận học bổng toàn phần học phí từ Đại học
+                            Sydney ... </p>
+                    </div>
+
+                    <div class="col-4 mt-4">
+                        <h6 id="hover-blue">
+                            Những vật dụng bị cấm mang vào phòng thi lớp 10 ở Hà Nội </h6>
+                        <p>Thí sinh thi lớp 10 không được mang vào phòng thi giấy than, bút xóa, các thiết bị truyền
+                            tin... </p>
+                    </div>
+                </div>
+                <hr class="thick-hr mt-3">
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Bộ Giáo dục tuýt còi trường đại học chỉ tuyển nam sinh cao trên 1,65 m
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Đáp án môn Tiếng Anh thi lớp 10 ở TP HCM
+                        </h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="dot-before" id="hover-blue">
+                            Hai thí sinh thi lớp 10 phải truyền insulin liên tục </h6>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="thick-hr mt-3">
+
+
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Podcasts </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">VnExpress hôm nay</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Tâm điểm kinh tế</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">Tài chính cá nhân </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Giải mã</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Hộp đen</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Thầm thì</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="col-6">
+                    <div class="row mt-4">
+                        <div class="col-3 ">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/05/nguoi-tre-xa-cach-bo-me-1717601927.jpg?w=160&h=160&q=100&dpr=2&fit=crop&s=qfKOBLqt6dO7aLcFDYGlNQ"
+                                width="100%">
+                        </div>
+                        <div class="col-9 ">
+                            <h6 id="hover-blue">Người trẻ ngày càng xa cách bố mẹ</h6>
+                            <p>Sau lần cãi vã vì mẹ không đồng ý chuyện có bạn trai sớm, Gia Hân lên mạng tâm sự và tìm
+                                thấy
+                                sự an ủi từ người lạ, Hân không còn coi mẹ là người có thể chia sẻ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 ">
+                    <div class="row mt-4 ">
+                        <div class="col-3 ">
+                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/04/co-nen-dung-don-bay-cao-de-som-so-huu-nha-1717483431.jpg?w=160&h=160&q=100&dpr=2&fit=crop&s=34oXIj3dwQI3ECE3o0SyCQ"
+                                width="100%">
+                        </div>
+                        <div class="col-9 ">
+                            <h6 id="hover-blue">
+                                Vay 80% mua nhà, nên hay không?</h6>
+                            <p>Lãi suất đang ở mốc thấp nhất trong chu kỳ 10 năm và bất động sản đang trong đầu chu kỳ
+                                phục
+                                hồi, theo chuyên gia, đây là lúc tốt nhất để tận dụng đòn bẩy mua nhà. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="thick-hr mt-2">
+
+
+            <div class="row mt-3">
+                <div class="col-4 vertical-separator">
+
+
+                    <h6 id="hover-blue"><i class="fas fa-headphones-alt"></i> Khổ sở vì cấm xe điện ở chung cư mini, nhà
+                        trọ</h6>
+                    <p>Đột ngột nhận thông báo bị lấy lại phòng trọ từ cuối tháng vì sử dụng xe điện, anh Đức Minh ở TP
+                        HCM
+                        loay hoay tìm nơi ở mới vừa túi tiền và chấp nhận giữ.</p>
+                </div>
+
+                <div class="col-4 vertical-separator">
+                    <h6 id="hover-blue"><i class="fas fa-headphones-alt"></i> Đường dây hối lộ triệu đô để vào Harvard
+                    </h6>
+                    <p>Để đưa con cái của giới nhà giàu vào được các trường danh giá như Harvard, Yale,.. William Singer
+                        lừa
+                        họ làm giả lý lịch và điểm số, thu về hàng chục triệu USD</p>
+                </div>
+
+                <div class="col-4">
+                    <h6 id="hover-blue"><i class="fas fa-headphones-alt"></i> Nam giới gồng mình chịu stress
+                    </h6>
+                    <p>Mang định kiến là trụ cột, Thanh Quang ám ảnh bởi các cuộc gọi hàng tháng của bố mẹ hỏi về thu
+                        nhập
+                        và trách nhiệm với người thân..</p>
+                </div>
+            </div>
+            <hr class="thick-hr mt-2">
+
+
+            <div class="tech-box mt-1">
+                <div class="row mt-3">
+                    <h2>Khoa học - Công nghệ</h2>
+                    <div class="row">
+                        <nav class="navbar-tech navbar-expand-lg navbar-light bg-light">
+                            <div class="collapse-tech navbar-collapse-tech" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Khoa học </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Việt Nam</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Chỉ số PII</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="#">Phát minh </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Ứng dụng</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Thế giới tự nhiên</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Sáng kiến khoa học 2024</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-5 mt-5 vertical-separator">
+                        <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/VNEHole-1717648256-6415-1717648382.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=wUMt2jhEdCP4y1VEDIfGzQ"
+                            width="100%">
+                        <h5 class="mt-2">Hố khổng lồ bí ẩn trên sao Hỏa</h5>
+                        <p>Hố rộng 35 m trong ảnh chụp từ camera trên tàu Mars Reconnaissance là bí ẩn địa chất đang chờ
+                            các
+                            tàu
+                            vũ trụ, robot và phi hành gia thám hiểm trong tương lai. </p>
+                    </div>
+
+                    <div class="col-7">
+                        <div class="row">
+                            <div class="col-5 mt-5 vertical-separator">
+                                <div>
+                                    <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/PHGkyluc-1717645294-9033-1717645481.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=90iIqT62AGzrz_jS0iPjYw"
+                                        width="100%">
+                                    <h6>Người đầu tiên sống 1.000 ngày trên vũ trụ
+                                    </h6>
+                                </div>
+                                <hr class=" thick-hr mt-3">
+
+                                <div class="mt-3">
+                                    <img src="https://i1-vnexpress.vnecdn.net/2024/06/06/VNETree-1717644954-7235-1717645005.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=6y6cM8nHEGyS9sYd4OESyg"
+                                        width="100%">
+                                    <h6>Cây 'biết đi' hàng trăm năm tuổi
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="col-7 mt-5">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-7 mt-4">
+                                            <h6>Tàu Trung Quốc mang mẫu vật Mặt Trăng về thế nào?</h6>
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/05/change-6-set.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=9FAzu-VRuFL20hy5Fvxo_w"
+                                                width="100%">
+                                        </div>
+
+
+                                    </div>
+                                    <hr class=" thick-hr mt-4">
+
+                                </div>
+
+                                <div>
+                                    <div class="row mt-3">
+                                        <div class="col-7">
+                                            <h6>Boeing phóng thành công tàu chở người đầu tiên lên vũ trụ</h6>
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/05/Boeingphongtau-1717599444-3118-1717599615.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=PNjFbPsu4AgMaig0q5fWsA"
+                                                width="100%">
+                                        </div>
+
+
+                                    </div>
+                                    <hr class=" thick-hr mt-4">
+
+                                </div>
+
+                                <div>
+                                    <div class="row mt-3">
+                                        <div class="col-7">
+                                            <h6>Khỉ đầu chó trả đũa báo hoa mai giết đồng loại </h6>
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/05/VNELeo-1717578816-3215-1717579088.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=kz6AfM8d0y4zMfl5efFRlg"
+                                                width="100%">
+                                        </div>
+
+
+                                    </div>
+                                    <hr class=" thick-hr mt-4">
+
+                                </div>
+
+                                <div>
+                                    <div class="row mt-3">
+                                        <div class="col-7">
+                                            <h6>Hóa thạch báo săn lớn nhất từng sống trên Trái Đất
+                                            </h6>
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/05/VNECheetah-1717572514-6458-1717572602.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=CEmslVZxZ2cnr9xbZaqpJQ"
+                                                width="100%">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="row">
+                        <nav class="navbar-tech navbar-expand-lg navbar-light bg-light">
+                            <div class="collapse-tech navbar-collapse-tech" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Số hóa </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Công nghệ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Sản phẩm</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="#">Blockchain</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Kinh nghiệm</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">GameVerse 2024</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-5 mt-4 vertical-separator">
+                        <img src="https://i1-sohoa.vnecdn.net/2024/06/06/apple-winner-1717649526-5135-1717649960.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=_OrUewKdJMJBUUe4r56iVg"
+                            width="100%">
+                        <h5 class="mt-1">Sinh viên Việt thắng giải Apple với ứng dụng 'đếm số lần nhai'</h5>
+                        <p>Minh Thạch (TP HCM) sử dụng ngôn ngữ lập trình Swift để viết phần mềm trong hai tuần, khuyến
+                            khích người dùng ăn một cách khoa học. </p>
+                    </div>
+
+                    <div class="col-7 mt-4">
+                        <div class="row">
+                            <div class="col-5 vertical-separator">
+                                <div>
+                                    <img src="https://i1-sohoa.vnecdn.net/2024/06/05/GPLXsettop-1717581437-2282-1717582239.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=TD6nBV7dch8mlXmUH6699Q"
+                                        width="100%">
+                                    <h6>
+                                        Cách khắc phục lỗi khi tích hợp Giấy phép lái xe vào VNeID
+                                        Cách khắc phục lỗi khi tích hợp Giấy phép lái xe vào VNeID
+                                    </h6>
+                                </div>
+                                <hr class=" thick-hr mt-4">
+
+
+                                <div class="mt-5">
+                                    <img src="" width="100%">
+                                    <h6>MediaTek 'phổ cập AI' với chip thế hệ mới
+
+                                    </h6>
+                                </div>
+                            </div>
+
+                            <div class="col-7 ">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h6>Cách khắc phục lỗi khi tích hợp Giấy phép lái xe vào VNeID</h6>
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="https://i1-sohoa.vnecdn.net/2024/06/05/GPLXsettop-1717581437-2282-1717582239.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=ZQ_QZVeATAVm3P5Ak46qbw"
+                                                width="100%">
+                                        </div>
+
+
+                                    </div>
+                                    <hr class=" thick-hr mt-4">
+
+                                </div>
+
+                                <div>
+                                    <div class="row mt-3">
+                                        <div class="col-7">
+                                            <h6>MediaTek 'phổ cập AI' với chip thế hệ mới</h6>
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="https://i1-sohoa.vnecdn.net/2024/06/05/mediatek-kompanio-838-vnexpres-9455-4846-1717596509.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=zCIabcguIANlVb4wdxxrYQ"
+                                                width="100%">
+                                        </div>
+
+
+                                    </div>
+                                    <hr class=" thick-hr mt-4">
+
+                                </div>
+
+                                <div>
+                                    <div class="row mt-3">
+                                        <div class="col-7">
+                                            <h6>Robot hình người đầu tiên leo Vạn Lý Trường Thành</h6>
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="https://i1-sohoa.vnecdn.net/2024/06/06/robot-1717631560-2231-1717631700.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=OeAfMqo9hQ8PqN3kLQ9R9g"
+                                                width="100%">
+                                        </div>
+
+
+                                    </div>
+                                    <hr class=" thick-hr mt-4">
+
+                                </div>
+
+                                <div>
+                                    <div class="row mt-3">
+                                        <div class="col-7">
+                                            <h6>Hóa thạch báo săn lớn nhất từng sống trên Trái Đất
+                                            </h6>
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="https://i1-vnexpress.vnecdn.net/2024/06/05/VNECheetah-1717572514-6458-1717572602.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=CEmslVZxZ2cnr9xbZaqpJQ"
+                                                width="100%">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="thick-hr-footer mt-5">
+
+
+            <div class="row">
+                <div class="col-7">
+                    <div class="row">
+                        <div class="col-3">
+                            <div style="text-align: left;">
+                                <h6 class="small-footer">Trang chủ</h6>
+                                <h6 class="small-footer">Video</h6>
+                                <h6 class="small-footer">Podcasts</h6>
+                                <h6 class="small-footer">Ảnh</h6>
+                                <h6 class="small-footer">Infographics</h6>
+                            </div>
+                            <hr class=" thick-hr mt-1">
+
+                            <div style="text-align: left;">
+                                <h6 class="small-footer">Mới nhất</h6>
+                                <h6 class="small-footer">Xem nhiều</h6>
+                                <h6 class="small-footer">Tin nóng</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Góc nhìn</h6>
+                                <p class="small">Bình luận nhiều</p>
+                                <p class="small">Chính trị và chính sách</p>
+                                <p class="small">Y tế và sức khỏe</p>
+                                <p class="small">Kinh doanh và quản trị</p>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Thể thao</h6>
+                                <p class="small">Pháp luật</p>
+                                <p class="small">Giáo dục</p>
+                                <p class="small">Sức khỏe</p>
+                                <p class="small">Đời sống</p>
+                                <p class="small">Du lịch</p>
+
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div style="text-align: left;">
+                                <h6 class="head-popup">Khoa học</h6>
+                                <p class="small">Số hóa</p>
+                                <p class="small">Xe</p>
+                                <p class="small">Ý kiến</p>
+                                <p class="small">Tâm sự</p>
+                                <p class="small">Thư giãn</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div style="text-align: left;">
+                        <h6 class="head-popup">Rao vặt</h6>
+                        <p class="small">Startup</p>
+                        <p class="small">Mua ảnh VnExpress</p>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    Tải ứng dụng
+                    <div class="row">
+                        <div class="col-6">
+                            VnExpress
+                        </div>
+                        <div class="col-6">
+                            International
+                        </div>
+                    </div>
+                    Liên hệ <br>
+                    Đường dây nóng
+                </div>
+            </div>
+
+            <hr class=" thick-hr mt-1">
 
         </div>
     </div>
