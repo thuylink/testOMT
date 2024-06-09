@@ -46,7 +46,7 @@
 }
 
 .head-popup {
-    color: #ad0c0c;
+    color: #e60707;
 }
 
 #hover-blue:hover {
@@ -157,15 +157,57 @@
     cursor: pointer;
 }
 
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    min-width: 160px;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(10px); /* Đặt giá trị ban đầu ở dưới */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng transition */
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Khi hover, di chuyển lên */
+}
+
+.menu {
+    display: none; /* Mặc định ẩn menu */
+}
+
 @media (max-width: 576px) {
-    /* Tùy chỉnh cho màn hình có kích thước <= 576px (ví dụ: iPhone 12 Pro) */
-    #customNavbar .navbar-nav {
-        flex-wrap: nowrap; /* Ngăn các mục dịch chuyển xuống hàng */
-        justify-content: flex-start; /* Căn trái các mục */
-    }
+    
     #openPopup{
         display: none !important;
-    }
+    } 
     #loginIconTrigger{
         margin-left: 95px !important;
     }
@@ -181,6 +223,12 @@
         height: 440px !important;
         width: 366px !important;
     }
+    #loginIconIphone{
+        margin-left: 150px !important;
+    }
+    .img-fluid{
+        margin-left: 20px !important;
+    }
     
 }
 
@@ -190,6 +238,49 @@
 }
 .icon-text i {
     margin-right: 8px; /* khoảng cách giữa icon và chữ */
+}
+
+.menu.fixed {
+    position: fixed;
+    top: 0;
+}
+
+.menu {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    background-color: #333;
+}
+
+.menu ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    cursor: grab;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #575757;
+}
+
+.grabbing {
+    cursor: grabbing !important;
+}
+
+.menu{
+    display: none;
 }
 
 
@@ -202,6 +293,14 @@
     }
 }
 
+@media only screen 
+    and (device-width: 390px) /* Chiều rộng của iPhone 12 Pro */
+    and (device-height: 844px) /* Chiều cao của iPhone 12 Pro */
+    and (-webkit-device-pixel-ratio: 3) /* Mật độ điểm ảnh của iPhone 12 Pro */ {
+        .menu {
+            display: block; /* Hiển thị menu chỉ trên iPhone 12 Pro */
+        }
+    }
 
 /* Hiển thị chỉ logo, icon bars và icon user trên iPhone 12 */
 /* Ẩn các phần khác trừ logo trên các màn hình có kích thước tương ứng với iPhone 12 Pro */

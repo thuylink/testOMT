@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test omt</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -14,11 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Import CSS file -->
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@interactjs/interactjs@1.10.11/dist/interact.min.js"></script>
 
 </head>
 
@@ -39,12 +41,13 @@
                         <div class="col-6">
 
                             <!-- bars của ipadmini -->
-                            
+
                             <i class="fa fa-bars" id="openPopup" style="margin-left: -500px; margin-top: 3px;"></i>
 
-                            <i class="fa fa-bars" id="openPopupMobile" style="margin-left: -500px; margin-top: 3px;"></i>
+                            <i class="fa fa-bars" id="openPopupMobile"
+                                style="margin-left: -500px; margin-top: 3px;"></i>
 
-                           
+
                             <div id="myPopup" class="popup">
                                 <div class="popup-content">
                                     <span id="closePopup" class="close">&times;</span>
@@ -147,12 +150,12 @@
                                 document.getElementById('openPopup').addEventListener('click', function () {
                                     document.getElementById('myPopup').style.display = 'block';
                                 });
-                            
+
                                 // Sự kiện click vào nút đóng hoặc dấu x để đóng popup
                                 document.getElementById('closePopup').addEventListener('click', function () {
                                     document.getElementById('myPopup').style.display = 'none';
                                 });
-                            
+
                                 // Đóng popup khi click bên ngoài nó
                                 window.addEventListener('click', function (event) {
                                     const popup = document.getElementById('myPopup');
@@ -170,13 +173,16 @@
                                         aria-label="Search">
 
                                     <div>
-                                        <div class="icon-text">
-                                            <i class="fa mt-3 " id="loginIcon"
-                                                style="font-family: Arial, sans-serif; margin-left: 2%;">
-                                                <h5>Đăng nhập, Tạo tài khoản</h5>
+                                        <div class="icon-text mt-2">
+                                            <i class="fa mt-3 " id="loginIcon" style="font-family: Arial, sans-serif; ">
+                                                <h5>
+                                                    Đăng nhập, Tạo tài khoản
+                                                </h5>
                                             </i>
                                         </div>
                                     </div>
+                                    <hr class="thick-hr">
+
 
                                     <div>
                                         <div class="icon-text">
@@ -188,7 +194,9 @@
                                             </i>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <hr class="thick-hr">
+
+                                    <div class="row mt-4">
                                         <div class="col-12" style="text-align: left;">
                                             <div class="dropdown">
                                                 <span class="dropdown-toggle" id="thoiSuDropdown" data-toggle="dropdown"
@@ -213,6 +221,8 @@
                                                     </li>
                                                 </div>
                                             </div>
+                                            <hr class="thick-hr">
+
 
                                             <div class="dropdown mt-4">
                                                 <span class="dropdown-toggle" id="thoiSuDropdown" data-toggle="dropdown"
@@ -238,6 +248,9 @@
                                                 </div>
                                             </div>
 
+                                            <hr class="thick-hr">
+
+
                                             <div class="dropdown mt-4">
                                                 <span class="dropdown-toggle" id="thoiSuDropdown" data-toggle="dropdown"
                                                     aria-haspopup="true" aria-expanded="false">
@@ -261,6 +274,8 @@
                                                     </li>
                                                 </div>
                                             </div>
+                                            <hr class="thick-hr">
+
                                         </div>
 
 
@@ -465,21 +480,21 @@
                                     function showPopup() {
                                         document.getElementById('loginPopup').style.display = 'block';
                                     }
-                                
+
                                     // Function to hide the popup
                                     function hidePopup() {
                                         document.getElementById('loginPopup').style.display = 'none';
                                     }
-                                
+
                                     // Add event listeners for both icons
                                     document.getElementById('loginIcon').addEventListener('click', showPopup);
                                     document.getElementById('loginIconIphone').addEventListener('click', showPopup);
-                                
+
                                     // Add event listener for the close button
                                     document.querySelector('.popup .close').addEventListener('click', hidePopup);
-                                
+
                                     // Add event listener to close the popup when clicking outside of it
-                                    window.addEventListener('click', function(event) {
+                                    window.addEventListener('click', function (event) {
                                         const popup = document.getElementById('loginPopup');
                                         if (event.target === popup) {
                                             hidePopup();
@@ -593,13 +608,110 @@
     </script>
 
 
+<nav class="menu">
+    <ul id="menuList">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+    </ul>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const menu = document.querySelector('.menu');
+    const header = document.querySelector('.header');
+    const headerHeight = header.offsetHeight;
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY >= headerHeight) {
+            menu.classList.add('fixed');
+        } else {
+            menu.classList.remove('fixed');
+        }
+    });
+});
+
+</script>
+
+<script>
+    const menuList = document.getElementById('menuList');
+const menuContainer = document.querySelector('.menu');
+
+let currentX = 0;
+let startX = 0;
+let isDragging = false;
+
+function onMove(event) {
+    if (!isDragging) return;
+
+    const dx = event.clientX - startX;
+    currentX = Math.min(0, Math.max(menuContainer.clientWidth - menuList.scrollWidth, currentX + dx));
+    menuList.style.transform = `translateX(${currentX}px)`;
+    startX = event.clientX;
+}
+
+function onEnd() {
+    isDragging = false;
+    menuList.classList.remove('grabbing');
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup', onEnd);
+}
+
+menuList.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    startX = event.clientX;
+    menuList.classList.add('grabbing');
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onEnd);
+});
+
+menuList.addEventListener('touchstart', (event) => {
+    isDragging = true;
+    startX = event.touches[0].clientX;
+    menuList.classList.add('grabbing');
+    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('touchend', onTouchEnd);
+});
+
+function onTouchMove(event) {
+    if (!isDragging) return;
+
+    const dx = event.touches[0].clientX - startX;
+    currentX = Math.min(0, Math.max(menuContainer.clientWidth - menuList.scrollWidth, currentX + dx));
+    menuList.style.transform = `translateX(${currentX}px)`;
+    startX = event.touches[0].clientX;
+}
+
+function onTouchEnd() {
+    isDragging = false;
+    menuList.classList.remove('grabbing');
+    window.removeEventListener('touchmove', onTouchMove);
+    window.removeEventListener('touchend', onTouchEnd);
+}
+
+
+</script>
+
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="customNavbar ">
         <div class="container-fluid">
 
             <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item  dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" aria-expanded="false">
                             Thời sự
                         </a>
@@ -758,7 +870,7 @@
                     <ul>
                         <li class="nav-item dropdown">
 
-                            <i class="fa fa-bars" id="openPopupIcon"></i> 
+                            <i class="fa fa-bars" id="openPopupIcon"></i>
                         </li>
 
                     </ul>
@@ -766,6 +878,7 @@
             </div>
         </div>
     </nav>
+
 
     <div id="myPopup" class="popup">
         <div class="popup-content">
@@ -866,12 +979,12 @@
         document.getElementById('openPopupIcon').addEventListener('click', function () {
             document.getElementById('myPopup').style.display = 'block';
         });
-    
+
         // Sự kiện click vào nút đóng hoặc dấu x để đóng popup
         document.getElementById('closePopup').addEventListener('click', function () {
             document.getElementById('myPopup').style.display = 'none';
         });
-    
+
         // Đóng popup khi click bên ngoài nó
         window.addEventListener('click', function (event) {
             const popup = document.getElementById('myPopup');
@@ -879,12 +992,12 @@
                 popup.style.display = 'none';
             }
         });
-        </script>
+    </script>
 
 
 
 
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var header = document.querySelector(".custom-header");
@@ -916,7 +1029,7 @@
                     alt="" width="100%">
             </div>
 
-            <div class=".col-sm-12 col-lg-5">
+            <div class=".col-sm-12 col-lg-5 mt-2">
                 <h4 class="hover-title">Có nên mua vàng lúc này khi giá giảm liên tục?</h4>
                 <h6 class="mt-4">
                     Các chuyên gia cho rằng giá vàng SJC có thể còn dư địa giảm tiếp, người dân nên chọn thời điểm giao
@@ -2249,7 +2362,7 @@
             <hr class=" thick-hr mt-1">
 
         </div>
-    </div>
+
 
 </body>
 
