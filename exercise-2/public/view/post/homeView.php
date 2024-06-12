@@ -40,10 +40,10 @@
                 <td><?= $item['updated_at'] ?></td>
                 <td>
                     <div class="table-data-feature">
-                        <a href="post/edit/<?= $item['id'] ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                        <a href="<?= PATH . 'post/edit/' . $item['id'] ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                             <i class="zmdi zmdi-edit"></i>
                         </a>
-                        <a href="post/delete/<?= $item['id'] ?>" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                        <a href="<?= PATH. 'post/delete/'. $item['id'] ?>" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                             <i class="zmdi zmdi-delete"></i>
                         </a>
                     </div>

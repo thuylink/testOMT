@@ -75,11 +75,11 @@
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="/post">
+                                    <a href="./post/list">
                                         <i class="fas fa-tachometer-alt"></i>Danh sách</a>
                                 </li>
                                 <li>
-                                    <a href="/post/create">
+                                    <a href="./post/create">
                                         <i class="fas fa-tachometer-alt"></i>Tạo post</a>
                                 </li>
                             </ul>

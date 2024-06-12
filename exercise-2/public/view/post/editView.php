@@ -5,7 +5,10 @@
         </div>
         <div class="card-body card-block">
             <div class="container-fluid">
-                <form action="/post/post-edit/<?=$data['data']['id']?>" method="post">
+<!--                <form action="/post/post-edit/--><?php //=$data['data']['id']?><!--" method="post">-->
+<!--                    --><?php //= __Include('post._form', $data) ?>
+<!--                </form>-->
+                <form action="<?= assetHandle("post/post-edit/".$data['id']) ?>" method="post">
                     <?= __Include('post._form', $data) ?>
                 </form>
             </div>

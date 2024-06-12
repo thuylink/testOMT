@@ -5,22 +5,14 @@ class DB
 {
     private static $conn; //LƯU TRỮ KẾT NỐI CƠ SỞ DỮ LIỆU
 
-    /*
-     * mục đích: kết nối đến CSDL, nhận các thông tin
-     * host, user, password, database thông qua func_get_args()
-     * hoạt động: dùng mysqli để tạo kết nối là lưu trữ kết nối trong thuốc tính tĩnh $conn
-     */
+
     public static function connection()
     {
         $db = func_get_args();
         self::$conn = new mysqli($db[0], $db[1], $db[2], $db[3]);
     }
 
-    /*
-     * mục đích: thực hiện truy vấn sql với tham số chuỗi truy vấn sql
-     * hoạt động: dùng mysqli_query để thực hiện truy vấn
-     * nếu truy vấn thất bại => gọi pthuc sql_error để báo lỗi
-     */
+
     public static function query($query_string) {
         $result = mysqli_query(self::$conn, $query_string);
         if (!$result) {
@@ -29,12 +21,7 @@ class DB
         return $result;
     }
 
-    /*
-     * mục đích: lấy 1 mảng dl, thực hiện truy vấn sql và trả về kq dưới dạng mảng
-     * hoạt động: gọi phương thức self::query để truy vấn
-     * dùng while để lấy từng kết quả và thêm vào mảng $result
-     * giải phóng bộ nhớ kết quả truy vấn với mysqli_free_result
-     */
+
     public static function fetch_array($query_string)
     {
         $result = [];
@@ -46,30 +33,17 @@ class DB
         return $result;
     }
 
-    /*
-     * mục đích: lấy số bản ghi, đếm số hàng trong kết quả truy vấn
-     * hoạt động: dùng mysqli_num_rows để trả về số lưng hàng
-     */
+
     public static function db_num_rows($query_string) {
         $mysqli_result = self::query($query_string);
         return mysqli_num_rows($mysqli_result);
     }
 
-    /*
-     * mục đích: chèn hàng mới vào CSDL
-     * ($table: tên bảng, $data: mảng kết hợp chứa các cặp khóa-gtri
-     * tương ứng với các trường và gtri cần chèn
-     * hoạt động: tạo chuỗi fields chưa tên các cột cần chèn
-     */
+
     public static function insert($table, $data)
     {
         $fields = "(" . implode(",", array_keys($data)) . ")";
-        //tạo danh sách các giá trị
-        /*
-         * lặp từng cặp khóa-giá trị trong mảng data
-         * nếu null -> thêm vào chuỗi values
-         * nếu k null -> sử dụng self::escape_string
-         */
+
         $values = "";
         foreach ($data as $field => $value) {
             if ($value === NULL) {
@@ -104,17 +78,12 @@ class DB
         return mysqli_affected_rows(self::$conn);
     }
 
-    /*
-     * mục đích: để thoát các kí tự đặc biệt trong một chuỗi để chuẩn bị cho việc
-     * sử dụng chuỗi đó trong một câu truy vấn sql -> giúp ngăn chặn tấn công sql injection
-     * hoạt động:
-     */
+
     public static function escape_string($str)
     {
         return mysqli_real_escape_string(self::$conn, $str);
     }
 
-    //log lỗi truy vấn
     public function sql_error($message, $query_string = "")
     {
         $sqlerror = "<table width='100%' border='1' cellpadding='0' cellspacing='0'>";

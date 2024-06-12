@@ -45,7 +45,7 @@ class UserController extends BaseController
         }
 
         $id = UserModel::save_user($request);
-        return $this->redirect('/')->with(['success'=>'Tạo mới user thành công', 'id_new' => $id]);
+        return $this->redirect('')->with(['success'=>'Tạo mới user thành công', 'id_new' => $id]);
     }
 
     public function edit($id)
@@ -86,7 +86,7 @@ class UserController extends BaseController
         }
         $request['updated_at'] = date('Y-m-d h:i:s');
         UserModel::update_user($request, $id);
-        return $this->redirect('/')->with(['success' => 'Sửa user thành công', 'id_new' => $id]);
+        return $this->redirect('')->with(['success' => 'Sửa user thành công', 'id_new' => $id]);
     }
 
     public function delete($id) {

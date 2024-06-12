@@ -3,6 +3,8 @@
 //Model('User');
 //Controller('Base');
 //Model('Post');
+//require_once "PA";
+
 class PostController extends BaseController
 {
     private $postModal;
@@ -44,7 +46,7 @@ class PostController extends BaseController
         }
 
         $id = PostModel::save_post($request);
-        return $this->redirect('/')->with(['success'=>'Tạo mới post thành công', 'id_new' => $id]);
+        return $this->redirect('')->with(['success'=>'Tạo mới post thành công', 'id_new' => $id]);
     }
 
     public function edit($id)
@@ -81,11 +83,11 @@ class PostController extends BaseController
         }
 
         PostModel::update_post($request, $id);
-        return $this->redirect('/post')->with(['success' => 'Sửa post thành công', 'id_new' => $id]);
+        return $this->redirect('')->with(['success' => 'Sửa post thành công', 'id_new' => $id]);
     }
 
     public function delete($id) {
         PostModel::delete_user($id);
-        return $this->redirect('/post')->with(['success' => 'Xóa user thành công']);
+        return $this->redirect('')->with(['success' => 'Xóa user thành công']);
     }
 }
