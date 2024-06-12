@@ -23,11 +23,11 @@ class PostModel extends DB
     }
 
     public static function find_post($id) {
-        return DB::fetch_array("SELECT * FROM `post` WHERE id = $id");
+        return DB::fetch_array("SELECT * FROM `posts` WHERE id = $id");
     }
 
 
-    public function check_user_post2($title, $user, $id)
+    public static function check_user_post2($title, $user, $id)
     {
         $sql = "SELECT id FROM posts WHERE id = $id AND title = '$title' AND user_id = '$user'";
         $check = self::db_num_rows($sql);
@@ -40,11 +40,11 @@ class PostModel extends DB
         return false;
     }
 
-    public function update_post($data, $id) {
+    public static function update_post($data, $id) {
         return self::update('posts', $data, "id = $id");
     }
 
-    public function delete_post($id) {
+    public static function delete_post($id) {
         return self::delete('posts', "id = $id");
     }
 

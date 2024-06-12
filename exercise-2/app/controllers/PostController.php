@@ -1,9 +1,9 @@
 <?php 
 
 //Model('User');
+//Model('UserModel');
 //Controller('Base');
 //Model('Post');
-//require_once "PA";
 
 class PostController extends BaseController
 {
@@ -87,7 +87,7 @@ class PostController extends BaseController
     }
 
     public function delete($id) {
-        PostModel::delete_user($id);
+        PostModel::delete_post($id);
         return $this->redirect('')->with(['success' => 'Xóa user thành công']);
     }
 }
