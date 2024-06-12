@@ -3,6 +3,7 @@
 //kế thừa từ lớp DB, sd được các phương thức trong DB
 class UserModel extends DB {
 
+
     public static function get_users()
     {
         echo 'vào get_user';
@@ -14,7 +15,13 @@ class UserModel extends DB {
         return DB::fetch_array("SELECT * FROM users WHERE id = $id");
     }
 
-    public static function save_user($data)
+    public static function detail_user($id)
+    {
+        return DB::fetch_array("SELECT * FROM users WHERE id = $id");
+    }
+
+
+public static function save_user($data)
     {
         return self::insert('users', $data);
     }

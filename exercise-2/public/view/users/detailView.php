@@ -18,17 +18,17 @@
 <div class="table-responsive table-responsive-data2">
     <table class="table table-data2">
         <thead>
-            <tr>
-                <th></th>
-                <th>Họ tên</th>
-                <th>Số điện thoại</th>
-                <th>Ngày sinh</th>
-                <th>Ngày tạo</th>
-            </tr>
+        <tr>
+            <th></th>
+            <th>Họ tên</th>
+            <th>Số điện thoại</th>
+            <th>Ngày sinh</th>
+            <th>Ngày tạo</th>
+        </tr>
         </thead>
         <tbody>
         <?php foreach ($data['data'] as $key => $item): ?>
-            <tr class="tr-shadow <?php
+            <tr class="tr-shadow  <?php
             if (!empty($_SESSION['id_new'])) {
                 echo $item['id'] == $_SESSION['id_new'] ? 'border border-success' : '';
                 if(count($data['data']) == $key + 1) {
@@ -37,21 +37,12 @@
             }
             ?>">
                 <td><?= ++$key ?></td>
-                <td>
-                    <a href="user/detail/<?= $item['id']?>" class="block-email" data-toggle="tooltip" data-placement="top" title="Detail">
-                        <?= $item['name'] ?>
-                    </a>
+                <td >
+                    <span class="block-email"> <?= $item['name'] ?></span>
                 </td>
-                <td>
-                    <a href="user/detail/<?= $item['id']?>" class="item" data-toggle="tooltip" data-placement="top" title="Detail">
-                        <?= $item['phone'] ?>
-                    </a>
-                </td>
-                <td>
-                    <a href="user/detail/<?= $item['id']?>" class="item" data-toggle="tooltip" data-placement="top" title="Detail">
-                        <?= $item['birth'] ?>
-                    </a>
-                </td>
+                <!--                <td >--><?php //= $item['phone'] ?><!--</td>-->
+                <td> <a href="user/detail/<?= $item['id']?>" class="item" data-toggle="tooltip" data-placement="top" title="Detail"> <?= $item['phone'] ?></a>  </td>
+                <td><?= $item['birth'] ?></td>
                 <td><?= $item['created_at'] ?></td>
                 <td>
                     <div class="table-data-feature">
@@ -64,7 +55,6 @@
                     </div>
                 </td>
             </tr>
-
             <tr class="spacer"></tr>
         <?php endforeach; ?>
         </tbody>

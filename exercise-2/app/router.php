@@ -8,7 +8,7 @@ Route::get('/user/create', [UserController::class, 'create']);
 Route::post('/user/create', [UserController::class, 'postCreate']);
 Route::get('user/edit/{id}', [UserController::class, 'edit']);
 Route::post('user/post-edit/{id}', [UserController::class, 'postEdit']);
-
+Route::get('user/detail/{id}', [UserController::class, 'detail']);
 Route::get('user/delete/{id}', [UserController::class, 'delete']);
 
 

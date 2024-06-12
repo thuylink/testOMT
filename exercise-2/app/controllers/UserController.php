@@ -6,7 +6,7 @@ Model('Post');
 
 class UserController extends BaseController
 {
-    private $userModal;
+    private  $userModal;
     public function __construct(){
         $this->userModal = new UserModel();
     }
@@ -15,6 +15,17 @@ class UserController extends BaseController
         $data = $this->userModal->get_users();
         echo 'chạy vào controller r';
         return $this->load_view('users.home', ['data' => $data]);
+    }
+
+    public function detail($id)
+    {
+        $data = $this->userModal->detail_user($id);
+        if($data) {
+            return $this->load_view('users.detail', ['data' => $data]);
+        } else {
+            echo "Người dùng không tồn tại";
+        }
+
     }
     public function create()
     {
@@ -62,7 +73,7 @@ class UserController extends BaseController
         return $this->load_view("users.edit", ['data' => $data[0], 'id' => $id]);
     }
 
-    public function postEdit($request, $id)
+    public function postEdit(array $request, $id)
     {
         echo $id;
         $errors = [];
