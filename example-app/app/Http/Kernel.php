@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CheckUserType;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -63,5 +64,10 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'admin' => \App\Http\Middleware\CheckUserType::class.':2',
+        'user' => \App\Http\Middleware\CheckUserType::class.':1',
+        'check.usertype' => CheckUserType::class,
+        'permission' => \App\Http\Middleware\CheckUserType::class,
+        'check.superadmin' => \App\Http\Middleware\CheckSuperAdmin::class,
     ];
 }

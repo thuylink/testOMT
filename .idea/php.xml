@@ -352,6 +352,9 @@
       <path value="$PROJECT_DIR$/example-app/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/example-app/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/example-app/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/example-app/vendor/symfony/mailgun-mailer" />
+      <path value="$PROJECT_DIR$/example-app/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/example-app/vendor/symfony/http-client" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
@@ -362,7 +365,7 @@
   </component>
   <component name="PhpUnit">
     <phpunit_settings>
-      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/laravel-10.x/phpunit.xml" custom_loader_path="$PROJECT_DIR$/laravel-10.x/vendor/autoload.php" use_configuration_file="true" />
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/exercise-3/phpunit.xml" custom_loader_path="$PROJECT_DIR$/exercise-3/vendor/autoload.php" use_configuration_file="true" />
       <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/example-app/phpunit.xml" custom_loader_path="$PROJECT_DIR$/example-app/vendor/autoload.php" use_configuration_file="true" />
     </phpunit_settings>
   </component>

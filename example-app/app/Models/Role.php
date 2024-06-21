@@ -15,12 +15,18 @@ class Role extends Model
         'name',
     ];
 
+//    public function users()
+//    {
+//        return $this->belongsTo(User::class);
+//    }
+
     public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
     }
 
-    public function permissions() {
+    public function permissions()
+    {
         return $this->belongsToMany(Permission::class);
     }
 }

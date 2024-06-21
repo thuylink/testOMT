@@ -294,27 +294,27 @@
 }
 
 @media only screen
-    and (device-width: 390px) /* Chiều rộng của iPhone 12 Pro */
-    and (device-height: 844px) /* Chiều cao của iPhone 12 Pro */
-    and (-webkit-device-pixel-ratio: 3) /* Mật độ điểm ảnh của iPhone 12 Pro */ {
-        .menu {
-            display: block; /* Hiển thị menu chỉ trên iPhone 12 Pro */
-        }
+and (device-width: 390px) /* Chiều rộng của iPhone 12 Pro */
+and (device-height: 844px) /* Chiều cao của iPhone 12 Pro */
+and (-webkit-device-pixel-ratio: 3) /* Mật độ điểm ảnh của iPhone 12 Pro */ {
+    .menu {
+        display: block; /* Hiển thị menu chỉ trên iPhone 12 Pro */
     }
+}
 
 /* Hiển thị chỉ logo, icon bars và icon user trên iPhone 12 */
 /* Ẩn các phần khác trừ logo trên các màn hình có kích thước tương ứng với iPhone 12 Pro */
 @media only screen
-  and (min-width: 390px) /* Điều kiện kích thước tối thiểu cho iPhone 12 Pro */
-  and (max-width: 428px) /* Điều kiện kích thước tối đa cho iPhone 12 Pro */
-  and (device-width: 390px)
-  and (device-height: 844px)
-  and (-webkit-device-pixel-ratio: 3) { /* Kích thước màn hình của iPhone 12 Pro */
+and (min-width: 390px) /* Điều kiện kích thước tối thiểu cho iPhone 12 Pro */
+and (max-width: 428px) /* Điều kiện kích thước tối đa cho iPhone 12 Pro */
+and (device-width: 390px)
+and (device-height: 844px)
+and (-webkit-device-pixel-ratio: 3) { /* Kích thước màn hình của iPhone 12 Pro */
     .img-fluid {
-    max-width: 341%;
-    height: auto;
-    margin-left: -50px !important;
-}
+        max-width: 341%;
+        height: auto;
+        margin-left: -50px !important;
+    }
     .logo {
         display: block;
         max-width: 100%; /* Đảm bảo ảnh không bị tràn khỏi phần tử cha */
@@ -337,12 +337,12 @@
 
 
 @media (min-width: 768px) {
-.container {
-    max-width: 640px;
-}
-#openPopupMobile{
-    display: none;
-}
+    .container {
+        max-width: 640px;
+    }
+    #openPopupMobile{
+        display: none;
+    }
 }
 
 
@@ -599,4 +599,17 @@ body {
     text-decoration-color: #e90808;
     text-underline-offset: 7px;
 }
+wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
+.content {
+    flex: 1;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+}

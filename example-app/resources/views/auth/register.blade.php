@@ -32,6 +32,14 @@
     </div>
 
     <div>
+        <label for="usertype">User Type</label>
+        <select id="usertype" name="usertype" required>
+            <option value="1">User</option>
+            <option value="2">Admin</option>
+        </select>
+    </div>
+
+    <div>
         <button type="submit">Register</button>
     </div>
 </form>

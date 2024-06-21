@@ -1,0 +1,1 @@
+<h2>email được gửi rồi</h2>
