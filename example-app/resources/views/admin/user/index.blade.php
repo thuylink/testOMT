@@ -1,3 +1,4 @@
+{{--@extends('layouts.app')--}}
 @extends('admin.layout.layout_main')
 
 @section('content')
@@ -28,12 +29,12 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->usertype == 2 ? 'Admin' : 'User' }}</td>
                     <td>
-{{--                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Chỉnh sửa</a>--}}
-{{--                        <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">--}}
-{{--                            @csrf--}}
-{{--                            @method('DELETE')--}}
-{{--                            <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?')">Xóa</button>--}}
-{{--                        </form>--}}
+                        {{--                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Chỉnh sửa</a>--}}
+                        {{--                        <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">--}}
+                        {{--                            @csrf--}}
+                        {{--                            @method('DELETE')--}}
+                        {{--                            <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?')">Xóa</button>--}}
+                        {{--                        </form>--}}
                     </td>
                 </tr>
             @endforeach

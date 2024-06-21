@@ -15,12 +15,12 @@ class CheckPermission
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, $permission)
     {
-//        return $next($request);
         if (Auth::check() && Auth::user()->hasPermission($permission)) {
             return $next($request);
         }
-        return redirect('/')->with('error', 'You do not have permission to perform this action.');
+
+        return redirect('/')->with('error', 'You do not have permission to access this page.');
     }
 }

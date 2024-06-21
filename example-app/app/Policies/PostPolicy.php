@@ -28,7 +28,8 @@ class PostPolicy
      */
     public function view(User $user, Post $post): bool
     {
-        return in_array($user->usertype, [1, 2]);
+        return $user->hasPermission('xem bai viet');
+//        return in_array($user->usertype, [1, 2]);
     }
 
     /**
@@ -58,18 +59,19 @@ class PostPolicy
 
     public function update(User $user, Post $post): bool
     {
+        return $user->hasPermission('sửa bài viêt');
         // Duyệt qua các vai trò (roles) của người dùng
-        foreach ($user->roles as $role) {
-            // Duyệt qua các quyền (permissions) của từng vai trò
-            foreach ($role->permissions as $permission) {
-                Log::info('User permission information', ['permission' => $permission->name]);
-                if ($permission->name == 'sửa bài viết') {
-                    return true;
-                }
-            }
-        }
-
-        return false;
+//        foreach ($user->roles as $role) {
+//            // Duyệt qua các quyền (permissions) của từng vai trò
+//            foreach ($role->permissions as $permission) {
+//                Log::info('User permission information', ['permission' => $permission->name]);
+//                if ($permission->name == 'sửa bài viết') {
+//                    return true;
+//                }
+//            }
+//        }
+//
+//        return false;
     }
 
     /**
@@ -77,13 +79,15 @@ class PostPolicy
      */
     public function delete(User $user, Post $post)
     {
-//        dd('destroy đây');
-        Log::info('Checking delete authorization', [
-            'user_id' => $user->id,
-            'post_user_id' => $post->user_id
-        ]);
+        return $user->hasPermission('xóa bai viết');
 
-        return $user->id === $post->user_id;
+//        dd('destroy đây');
+//        Log::info('Checking delete authorization', [
+//            'user_id' => $user->id,
+//            'post_user_id' => $post->user_id
+//        ]);
+//
+//        return $user->id === $post->user_id;
     }
 
 

@@ -34,14 +34,19 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info">Xem chi tiết</a> <br>
-                        <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning">Chỉnh sửa</a>
-                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa bài viết này?')">Xóa</button>
-                        </form>
-
+                        @can('view', $post)
+                            <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info">Xem chi tiết</a> <br>
+                        @endcan
+                        @can('update', $post)
+                            <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning">Chỉnh sửa</a>
+                        @endcan
+                        @can('delete', $post)
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa bài viết này?')">Xóa</button>
+                            </form>
+                        @endcan
                     </td>
                 </tr>
             @endforeach

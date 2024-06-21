@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
         'check.usertype' => CheckUserType::class,
         'permission' => \App\Http\Middleware\CheckUserType::class,
         'check.superadmin' => \App\Http\Middleware\CheckSuperAdmin::class,
+        'permission' => \App\Http\Middleware\CheckPermission::class,
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Role;
@@ -14,7 +15,9 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('admin.user.create');
+        $roles = Role::all();
+        $permissions = Permission::all();
+        return view('admin.user.create', compact('roles', 'permissions'));
     }
 
     public function store(Request $request)
@@ -23,7 +26,10 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-            'usertype' => 'required|string|in:admin,user',
+            'role_id' => 'required|exists:roles,id',
+            'permissions' => 'required|array',
+            'permissions.*' => 'exists:permissions,id', // Validate each permission
+            'usertype' => 'required|string|in:admin,user', // Validate the usertype
         ]);
 
         $usertype = $request->usertype === 'admin' ? 2 : 1;
@@ -35,20 +41,13 @@ class UserController extends Controller
             'usertype' => $usertype,
         ]);
 
-        // Gán quyền cho tài khoản mới
-        if ($usertype == 2) {
-            $role = Role::where('name', 'admin')->first();
-        } else {
-            $role = Role::where('name', 'user')->first();
-        }
+        $user->roles()->attach($request->role_id);
 
-        if ($role) {
-            $user->roles()->attach($role);
-        }
+        // Attach multiple permissions
+        $user->permissions()->attach($request->permissions);
 
         return redirect()->route('users.index')->with('success', 'Tạo tài khoản người dùng thành công');
     }
-
     public function show($id) {
         $post = Post::findOrFail($id);
         return view('user.detail', compact('post'));
